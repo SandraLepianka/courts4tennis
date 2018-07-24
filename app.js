@@ -12,7 +12,7 @@ const path         = require('path');
 
 mongoose.Promise = Promise;
 mongoose
-  .connect('mongodb://localhost/kourts-upgrade', {useMongoClient: true})
+  .connect('mongodb://localhost/courts4tennis', {useMongoClient: true})
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
@@ -54,5 +54,16 @@ app.locals.title = 'Express - Generated with IronGenerator';
 const index = require('./routes/index');
 app.use('/', index);
 
+const signup = require('./routes/signup');
+app.use('/', signup);
+
+const login = require('./routes/login');
+app.use('/', login);
+
+const dashboard = require('./routes/dashboard');
+app.use('/', dashboard);
+
+const details = require('./routes/details');
+app.use('/', details);
 
 module.exports = app;
