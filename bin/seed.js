@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Courts = require('../models/courts');
 
 const dbName = 'courts4tennis';
-mongoose.connect(`mongodb://localhost/${dbName}`);
+mongoose.connect(process.env.MONGODB_URI);
 
 const courts = [
   {

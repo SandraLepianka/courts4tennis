@@ -11,8 +11,7 @@ const path         = require('path');
 
 
 mongoose.Promise = Promise;
-mongoose
-  .connect('mongodb://localhost/courts4tennis', {useMongoClient: true})
+mongoose.connect(process.env.MONGODB_URI);
   .then(() => {
     console.log('Connected to Mongo!')
   }).catch(err => {
